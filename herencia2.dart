@@ -16,19 +16,14 @@ class Productos {
   void capturaDatos() {
     print('Ingrese el ID del producto:');
     id = int.parse(stdin.readLineSync()!);
-
     print('Ingrese el nombre del producto:');
     nombre = stdin.readLineSync()!;
-
     print('Ingrese el precio del producto:');
     precio = double.parse(stdin.readLineSync()!);
-
     print('Ingrese la descripción del producto:');
     descripcion = stdin.readLineSync()!;
-
     print('Ingrese el estado del producto:');
     estado = stdin.readLineSync()!;
-
     print('Ingrese la fecha de caducidad (YYYY-MM-DD):');
     caducidad = DateTime.parse(stdin.readLineSync()!);
   }
@@ -49,29 +44,22 @@ class Ventas extends Productos {
 
   // Método para capturar datos de la venta desde la consola
   void capturaDatosVenta() {
-    super.capturaDatos(); // Captura primero los datos del producto
-
+    super.capturaDatos();
     print('Ingrese el ID de la venta:');
     idVenta = int.parse(stdin.readLineSync()!);
-
     print('Ingrese el ID del personal:');
     idPersonal = int.parse(stdin.readLineSync()!);
-
     print('Ingrese el ID del cliente:');
     idCliente = int.parse(stdin.readLineSync()!);
-
     print('Ingrese la cantidad:');
     cantidad = int.parse(stdin.readLineSync()!);
-
-    total = cantidad * precio; // Calcula el total automáticamente
-
+    total = cantidad * precio;
     print('Ingrese la fecha de la venta (YYYY-MM-DD):');
     fecha = DateTime.parse(stdin.readLineSync()!);
   }
 
   // Método para mostrar los datos de la venta
   void mostrarDatosVenta() {
-
     print('\nDatos de la Venta:');
     print('ID Venta: $idVenta');
     print('ID Personal: $idPersonal');
@@ -79,8 +67,6 @@ class Ventas extends Productos {
     print('Cantidad: $cantidad');
     print('Total: \$${total.toStringAsFixed(2)}');
     print('Fecha: $fecha');
-
-    // Mostrar datos del producto vendido
     print('\nDatos del Producto:');
     print('ID Producto: $id');
     print('Nombre: $nombre');
@@ -92,13 +78,9 @@ class Ventas extends Productos {
 }
 
 void main() {
-  // Crear una instancia de Ventas
-  Ventas venta = Ventas(0, '', 0.0, '', '', DateTime.now(), 0, 0, 0, 0, 0.0, DateTime.now());
-
-  // Capturar datos desde la consola
-  print('Captura de datos de la venta:');
-  venta.capturaDatosVenta();
-
+  // Crear una instancia de Ventas con datos previamente llenados
+  Ventas venta = Ventas(1, 'Producto A', 100.0, 'Descripción del Producto A', 'Nuevo', DateTime(2025, 12, 31), 1, 101, 201, 2, 200.0, DateTime(2025, 2, 18));
+  
   // Mostrar los datos capturados
   venta.mostrarDatosVenta();
 
