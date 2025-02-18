@@ -1,0 +1,2 @@
+crear una clase animal con los atributos id _animal, nombre y raza. Y una funcion comer). crear otra clase perro con herencia animal con las funciones correrO y y otra dormir. con dart
+![alt text](image-11.png)
